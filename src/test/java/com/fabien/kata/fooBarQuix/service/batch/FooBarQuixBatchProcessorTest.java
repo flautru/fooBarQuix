@@ -15,10 +15,8 @@ import org.mockito.MockitoAnnotations;
 import static org.mockito.Mockito.when;
 
 public class FooBarQuixBatchProcessorTest {
-
     @Mock
     private FooBarQuixService fooBarQuixService;
-
     @InjectMocks
     private FooBarQuixBatchProcessor fooBarQuixBatchProcessor;
 
@@ -37,7 +35,6 @@ public class FooBarQuixBatchProcessorTest {
 
         assertEquals(new FooBarQuixResult(input.number(),expected),result);
     }
-
 
     @Test
     void processFooBarQuixWith0(){
@@ -70,6 +67,4 @@ public class FooBarQuixBatchProcessorTest {
 
         assertEquals("Invalid input : Number must be between 0 and 100",exception.getMessage());
     }
-
-
 }

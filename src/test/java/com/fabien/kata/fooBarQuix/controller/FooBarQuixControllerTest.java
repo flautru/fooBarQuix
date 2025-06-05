@@ -6,24 +6,16 @@ import org.junit.jupiter.api.Test;
 import org.springframework.batch.core.*;
 import org.springframework.batch.core.explore.JobExplorer;
 import org.springframework.batch.core.launch.JobLauncher;
-import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.http.ResponseEntity;
-
-import java.io.File;
-import java.io.IOException;
-import java.nio.file.Files;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
-
 public class FooBarQuixControllerTest {
-
     private FooBarQuixService fooBarQuixService;
     private JobLauncher jobLauncher;
     private Job job;
     private JobExplorer jobExplorer;
-
     private FooBarQuixController controller;
 
     @BeforeEach
@@ -32,7 +24,6 @@ public class FooBarQuixControllerTest {
         jobLauncher = mock(JobLauncher.class);
         job = mock(Job.class);
         jobExplorer = mock(JobExplorer.class);
-
         controller = new FooBarQuixController(fooBarQuixService, jobLauncher, job, jobExplorer);
     }
 
@@ -98,7 +89,7 @@ public class FooBarQuixControllerTest {
         ResponseEntity<String> response = controller.getJobStatus(jobId);
 
         assertEquals(200, response.getStatusCodeValue());
-        assertTrue(response.getBody().contains("COMPLETED"));
+        assertTrue(response.getBody().matches("Job status is : COMPLETED"));
     }
 
     @Test
@@ -111,7 +102,4 @@ public class FooBarQuixControllerTest {
         assertEquals(404, response.getStatusCodeValue());
         assertEquals("Job not Found", response.getBody());
     }
-
-   
-
 }

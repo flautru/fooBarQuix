@@ -1,11 +1,9 @@
 package com.fabien.kata.fooBarQuix.service;
 
-import com.fabien.kata.fooBarQuix.service.FooBarQuixService;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
-
 
 class fooBarQuixServiceTest extends FooBarQuixService {
 
@@ -46,6 +44,7 @@ class fooBarQuixServiceTest extends FooBarQuixService {
         assertEquals (BAR, getFooBarQuix(10));
         assertEquals (BAR, getFooBarQuix(100));
     }
+
     @Test
     public void getFooBarQuix_returnQUIX_whenAndContain7(){
         assertEquals (QUIX, getFooBarQuix(7));
@@ -60,7 +59,6 @@ class fooBarQuixServiceTest extends FooBarQuixService {
     @Test
     public void getFooBarQuix_returnFOOBAR_whenIsDivisibleBy3AndContain5(){
         assertEquals (FOO+BAR, getFooBarQuix(51));
-
         // Dans le contexte de cette application 0 est considéré comme divisible par 3 et 5
         assertEquals (FOO+BAR, getFooBarQuix(0));
     }

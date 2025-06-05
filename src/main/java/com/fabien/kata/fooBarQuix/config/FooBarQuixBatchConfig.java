@@ -26,6 +26,7 @@ import org.springframework.transaction.PlatformTransactionManager;
 
 @Configuration
 public class FooBarQuixBatchConfig {
+
     private final FooBarQuixService fooBarQuixService;
 
     public FooBarQuixBatchConfig(FooBarQuixService fooBarQuixService) {
@@ -74,5 +75,4 @@ public class FooBarQuixBatchConfig {
                 .writer(writer)
                 .build();
     }
-
 }

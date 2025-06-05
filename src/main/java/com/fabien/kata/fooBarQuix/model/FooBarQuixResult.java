@@ -6,6 +6,4 @@ public record FooBarQuixResult (int number, String result) {
     public String toString(){
         return number + " \"" + result + "\"";
     }
-
-
 }

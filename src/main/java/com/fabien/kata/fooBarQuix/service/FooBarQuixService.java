@@ -4,16 +4,14 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class FooBarQuixService {
-
     protected final String FOO = "FOO";
     protected final String BAR = "BAR";
     protected final String QUIX = "QUIX";
 
     public String getFooBarQuix (Integer num ) {
-        validateNumber(num);
-
-        // Dans ce cas 0 est considéré comme divisible par 3 et 5
+        validateNum(num);
         StringBuilder sRet = new StringBuilder();
+        // Dans ce cas 0 est considéré comme divisible par 3 et 5
         if(num % 3 == 0) sRet.append(FOO);
         if(num % 5 == 0) sRet.append(BAR);
 
@@ -29,9 +27,8 @@ public class FooBarQuixService {
         return sRet.toString();
     }
 
-    private void validateNumber(Integer num){
+    private void validateNum(Integer num){
         if(num == null) throw new IllegalArgumentException("Invalid input : cant be null");
         if(num < 0 || num>100) throw new IllegalArgumentException("Invalid input : Number must be between 0 and 100");
     }
-
 }

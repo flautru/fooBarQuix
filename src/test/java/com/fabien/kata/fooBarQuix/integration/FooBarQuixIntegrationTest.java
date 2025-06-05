@@ -11,7 +11,6 @@ import org.springframework.batch.core.launch.JobLauncher;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-
 import java.io.File;
 import java.nio.file.Files;
 import java.util.List;
@@ -20,7 +19,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest
 public class FooBarQuixIntegrationTest {
-
     private static final String OUTPUT_FILE_PATH="temp/test-files/output.csv";
 
     @Autowired

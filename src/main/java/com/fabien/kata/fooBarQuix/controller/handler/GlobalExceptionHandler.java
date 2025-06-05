@@ -18,5 +18,4 @@ public class GlobalExceptionHandler {
     public ResponseEntity<String> handleTypeMismatch(MethodArgumentTypeMismatchException exception) {
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(exception.getMessage());
     }
-
 }

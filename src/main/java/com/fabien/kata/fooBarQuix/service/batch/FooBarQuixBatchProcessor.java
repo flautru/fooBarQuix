@@ -6,9 +6,7 @@ import com.fabien.kata.fooBarQuix.service.FooBarQuixService;
 import org.springframework.batch.item.ItemProcessor;
 
 public class FooBarQuixBatchProcessor implements ItemProcessor<Input, FooBarQuixResult> {
-
     private final FooBarQuixService fooBarQuixService;
-
 
     public FooBarQuixBatchProcessor(FooBarQuixService fooBarQuixService) {
         this.fooBarQuixService = fooBarQuixService;

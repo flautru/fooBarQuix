@@ -43,6 +43,8 @@ Ce contrôleur expose plusieurs endpoints REST pour :
 - GET /api/fooBarQuix/batch/status/{jobId}
 - GET /api/fooBarQuix/batch/result
 
+Plus d'information sur swagger : http://localhost:8080/swagger-ui/index.html
+
 📁 Fichiers impliqués
 - Entrée : input_numbers.txt
 - Sortie : temp/output.csv

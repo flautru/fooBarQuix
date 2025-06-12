@@ -1,9 +1,9 @@
-package com.fabien.kata.fooBarQuix.service.batch;
+package com.fabien.kata.fooBarQuix.batch;
 
 import com.fabien.kata.fooBarQuix.model.FooBarQuixResult;
 import com.fabien.kata.fooBarQuix.model.Input;
 import com.fabien.kata.fooBarQuix.service.FooBarQuixService;
-import com.fabien.kata.fooBarQuix.service.batch.FooBarQuixBatchProcessor;
+import com.fabien.kata.fooBarQuix.batch.processor.FooBarQuixBatchProcessor;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;

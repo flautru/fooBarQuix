@@ -1,10 +1,12 @@
-package com.fabien.kata.fooBarQuix.service.batch;
+package com.fabien.kata.fooBarQuix.batch.processor;
 
 import com.fabien.kata.fooBarQuix.model.FooBarQuixResult;
 import com.fabien.kata.fooBarQuix.model.Input;
 import com.fabien.kata.fooBarQuix.service.FooBarQuixService;
 import org.springframework.batch.item.ItemProcessor;
+import org.springframework.context.annotation.Configuration;
 
+@Configuration
 public class FooBarQuixBatchProcessor implements ItemProcessor<Input, FooBarQuixResult> {
     private final FooBarQuixService fooBarQuixService;
 

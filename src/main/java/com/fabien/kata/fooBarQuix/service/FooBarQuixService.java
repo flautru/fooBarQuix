@@ -2,11 +2,10 @@ package com.fabien.kata.fooBarQuix.service;
 
 import org.springframework.stereotype.Service;
 
+import static com.fabien.kata.fooBarQuix.common.FooBarQuixConstants.*;
+
 @Service
 public class FooBarQuixService {
-    protected final String FOO = "FOO";
-    protected final String BAR = "BAR";
-    protected final String QUIX = "QUIX";
 
     public String getFooBarQuix (Integer num ) {
         validateNum(num);

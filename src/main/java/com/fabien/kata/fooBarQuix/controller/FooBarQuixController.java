@@ -8,6 +8,7 @@ import org.springframework.batch.core.*;
 import org.springframework.batch.core.explore.JobExplorer;
 import org.springframework.batch.core.launch.JobLauncher;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -28,6 +29,9 @@ public class FooBarQuixController {
     private final JobLauncher jobLauncher;
     private final Job job;
     private final JobExplorer jobExplorer;
+
+    @Value("${file.output}")
+    private String outputFilePath;
 
     public FooBarQuixController(FooBarQuixService fooBarQuixService, JobLauncher jobLauncher, Job job, JobExplorer jobExplorer) {
         this.fooBarQuixService = fooBarQuixService;
@@ -76,7 +80,7 @@ public class FooBarQuixController {
     @Operation(summary = "See status of job")
     @ApiResponse(responseCode = "200", description = "Return file output with number converted")
     public ResponseEntity<byte[]> getJobResult() throws IOException {
-       File outputFile = new File("temp/test-files/output.csv");
+       File outputFile = new File(outputFilePath);
 
         if (!outputFile.exists()) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
@@ -84,7 +88,7 @@ public class FooBarQuixController {
 
         byte[] fileContent = Files.readAllBytes(outputFile.toPath());
         HttpHeaders headers = new HttpHeaders();
-        headers.add(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=result.csv");
+        headers.add(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=output.csv");
         headers.add(HttpHeaders.CONTENT_TYPE, "text/csv");
 
         return new ResponseEntity<>(fileContent, headers, HttpStatus.OK);

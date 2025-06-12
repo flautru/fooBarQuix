@@ -2,6 +2,7 @@ package com.fabien.kata.fooBarQuix.service;
 
 import org.junit.jupiter.api.Test;
 
+import static com.fabien.kata.fooBarQuix.common.FooBarQuixConstants.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 

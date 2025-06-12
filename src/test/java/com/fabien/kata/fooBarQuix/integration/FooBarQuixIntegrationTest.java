@@ -19,7 +19,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest
 public class FooBarQuixIntegrationTest {
-    private static final String OUTPUT_FILE_PATH="temp/test-files/output.csv";
+    private static final String OUTPUT_FILE_PATH="temp/output.csv";
 
     @Autowired
     private JobLauncher jobLauncher;
